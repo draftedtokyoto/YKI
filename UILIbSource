@@ -1,4 +1,3 @@
-
 local PCR_1 = Instance.new("ScreenGui")
 local TweenService = game:GetService('TweenService');
 local uis = game:GetService("UserInputService")
@@ -2297,23 +2296,14 @@ end)
 
 library.GUI = PCR_1 
 
-plrr = game.Players.LocalPlayer
-
-
-mousee = plrr:GetMouse()
-
-
-
-
-mousee.KeyDown:connect(function(keya)
-
-if keya == getgenv().ToggleKey then
-if MAIN.Visible then
-MAIN.Visible = false
-else
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(KeyCode)
+	if KeyCode.KeyCode == Enum.KeyCode.Equals then
+		if MAIN.Visible then
+MAIN.Visible = false else
 MAIN.Visible = true
 end
-end
+	end
 end)
 
 return library
